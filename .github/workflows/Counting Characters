@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	function updateOutput() {
+		var txt = document.getElementById("txtUserInput").value; 
+		var numchars = txt.length;
+		var txtOutput ="";
+		var currWord ="";
+		var countWord = 1
+		var countLetter = 0
+			for (var i=0;i<numchars;i++){
+				var	currLetter=txt.substr(i,1);
+			if(currLetter==" "){
+				txtOutput+=currWord+"<br>";
+				currWord="";
+				countWord++
+			}
+			else {
+				currWord+=currLetter;
+				countLetter++
+			}
+			}
+			if(currWord.length>0)
+				txtOutput+=currWord;
+				document.getElementById("pOutput").innerHTML="There are "+countWord+" Words and there are "+countLetter+" Letters";
+			}
+			if(currLetter==" ")
+			!countLetter++
+</script>
+</head>
+<body>
+	<textarea id='txtUserInput' onkeyup="updateOutput();" value="Text Goes Here"></textarea><br>
+	<p id='pOutput'>
+	Your output will be shown here.
+</p>
+</body>
+</html>
